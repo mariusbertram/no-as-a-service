@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" fill="none">
+  <title>Logo von bundesbehörden-nein-as-a-Service</title>
+  <desc>Ein stilisiertes Verwaltungsgebäude mit rotem Nein-Stempel, ohne amtliches Hoheitszeichen.</desc>
+  <rect x="2" y="2" width="156" height="156" rx="28" fill="#F4F6F8" stroke="#CAD3DC" stroke-width="2"/>
+  <path d="M32 54 80 28 128 54Z" fill="#18354B"/>
+  <path d="M32 60H128M30 116H130M26 126H134" stroke="#18354B" stroke-width="8"/>
+  <path d="M45 68V108M68 68V108M92 68V108M115 68V108" stroke="#18354B" stroke-width="10"/>
+  <g transform="rotate(-12 91 103)">
+    <rect x="46" y="82" width="90" height="42" rx="5" fill="#FFF" stroke="#B42332" stroke-width="4"/>
+    <text x="91" y="111" text-anchor="middle" fill="#B42332" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="700" letter-spacing="2">NEIN</text>
+  </g>
+</svg>
