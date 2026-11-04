@@ -1,6 +1,5 @@
 pages:
   stage: deploy
-  image: busybox
   script:
     - echo "Statische Seite aus public/"
   pages: true
