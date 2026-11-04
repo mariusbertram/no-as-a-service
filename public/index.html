@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>No-as-a-Service</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 42rem; margin: 2rem auto; padding: 0 1rem; text-align: center; }
+    img { max-width: 100%; }
+    #reason { font-size: 1.4rem; min-height: 6rem; margin: 2rem 0; }
+    button, select { font-size: 1rem; padding: .5rem 1rem; }
+  </style>
+</head>
+<body>
+  <img src="assets/banner.png" alt="No-as-a-Service">
+  <h1>❌ No-as-a-Service</h1>
+  <p id="reason" aria-live="polite"></p>
+  <button id="again">Noch ein Nein</button>
+  <button id="copy" disabled>Nein kopieren</button>
+  <select id="lang" aria-label="Sprache">
+    <option value="de" selected>Behördendeutsch</option>
+    <option value="en">English</option>
+  </select>
+  <p id="status" role="status"></p>
+  <p><small>Rohdaten: <a href="reasons-en.json">reasons-en.json</a></small></p>
+  <script src="app.js"></script>
+</body>
+</html>

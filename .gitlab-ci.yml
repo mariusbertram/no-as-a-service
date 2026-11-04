@@ -1,0 +1,11 @@
+pages:
+  stage: deploy
+  image: busybox
+  script:
+    - echo "Statische Seite aus public/"
+  pages: true
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
