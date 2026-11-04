@@ -1,5 +1,6 @@
 pages:
   stage: deploy
+  image: registry.access.redhat.com/ubi9/ubi:latest
   script:
     - echo "Statische Seite aus public/"
   pages: true
