@@ -12,6 +12,9 @@
     h1 { font-size: clamp(1.5rem, 5vw, 2.2rem); overflow-wrap: anywhere; }
     #reason { font-size: 1.25rem; line-height: 1.7; min-height: 6rem; margin: 2rem 0; padding: 1.5rem; background: white; border: 1px solid #cad3dc; border-top: 4px solid #18354b; text-align: left; }
     .controls { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem; }
+    .selection { display: flex; flex-direction: column; gap: .3rem; text-align: left; min-width: 0; max-width: 100%; }
+    .selection span { font-size: .85rem; }
+    select { max-width: 100%; }
     button, select { font: inherit; padding: .65rem 1rem; border: 1px solid #18354b; border-radius: .25rem; background: white; color: #18354b; }
     button { cursor: pointer; }
     #again { background: #18354b; color: white; }
@@ -33,18 +36,29 @@
   <div class="controls">
   <button id="again">Noch ein Nein</button>
   <button id="copy" disabled>Nein kopieren</button>
-  <select id="lang" aria-label="Sprache">
-    <option value="de" selected>Bundesbehördendeutsch</option>
+  <label class="selection">
+  <span>Sprache</span>
+  <select id="lang">
+    <option value="de" selected>Deutsch</option>
     <option value="en">English</option>
   </select>
+  </label>
+  <label class="selection">
+  <span>Dialekt / Variante (Deutsch)</span>
+  <select id="dialect">
+    <option value="standard" selected>Bundesbehördendeutsch</option>
+  </select>
+  </label>
   </div>
   <p id="status" role="status"></p>
   <noscript>Bitte JavaScript aktivieren, um einen satirischen Bescheid zu erzeugen.</noscript>
   </main>
   <footer>
   <p>Satireprojekt. Keine Bundesbehörde, keine amtlichen Bescheide und keine Rechtsauskunft.</p>
+  <p>Die Dialekte sind humorvolle regionale Anklänge, keine exakten sprachlichen Abbildungen.</p>
   <p><small>Rohdaten: <a href="reasons-en.json">reasons-en.json</a></small></p>
   </footer>
+  <script src="dialects.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

@@ -6,6 +6,7 @@ Statische Version des Nein-Generators. Läuft komplett im Browser, ganz ohne Ser
 
 - **Bundesbehördendeutsch**: satirische Absagen auf Bundesverwaltungsebene, mit Ressortabstimmung, Haushaltsvorbehalt, Bund-Länder-Zuständigkeit und ministerieller Mitzeichnung. Dazu kommen Fördermittel, Vergabe, Digitalisierung, der Besprechungsfreitag und die Fensterreinigung am Dienststandort. 70 feste Absagen und über 11 Millionen kombinierbare Varianten.
 - **English**: zufällige Absagen aus `public/reasons-en.json`.
+- **Separate Dialektauswahl für Deutsch**: Bundesbehördendeutsch (Standard), Berlin, Thüringen, Bayern, München, Ruhrgebiet, Frankfurt, Köln, Sachsen, Schwaben und Norddeutschland. Je acht eigene regionale Absagen, inklusive Besprechungsfreitag und Fensterreinigung. Die Texte sind humorvolle Dialekt-Anklänge, keine exakten Transkriptionen. Bei Englisch ist die Dialektauswahl deaktiviert; die deutsche Auswahl bleibt erhalten.
 - **Nein kopieren**: kopiert die angezeigte Absage in die Zwischenablage (HTTPS oder localhost erforderlich).
 
 Eigene SVG-Wortmarke mit Verwaltungsgebäude, schwarz-rot-goldener Leiste und

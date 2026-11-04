@@ -230,16 +230,34 @@ const loadEn = async () => {
 
 const out = document.getElementById("reason");
 const lang = document.getElementById("lang");
+const dialect = document.getElementById("dialect");
 const copy = document.getElementById("copy");
 const status = document.getElementById("status");
 let requestId = 0;
+
+for (const [value, { label }] of Object.entries(dialects)) {
+  const option = document.createElement("option");
+  option.value = value;
+  option.textContent = label;
+  dialect.append(option);
+}
 
 const next = async () => {
   const id = ++requestId;
   status.textContent = "";
   copy.disabled = true;
+  dialect.disabled = lang.value !== "de";
   try {
-    const reason = lang.value === "de" ? generateDe() : pick(await loadEn());
+    let reason;
+    if (lang.value === "en") {
+      reason = pick(await loadEn());
+    } else if (dialect.value === "standard") {
+      reason = generateDe();
+    } else {
+      const variant = dialects[dialect.value];
+      if (!variant) throw new Error("Unbekannte Dialektvariante");
+      reason = pick(variant.reasons);
+    }
     if (id !== requestId) return;
     out.textContent = reason;
     out.lang = lang.value;
@@ -271,4 +289,5 @@ copy.addEventListener("click", async () => {
 
 document.getElementById("again").addEventListener("click", next);
 lang.addEventListener("change", next);
+dialect.addEventListener("change", next);
 next();
