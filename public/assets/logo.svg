@@ -1,12 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="240" viewBox="0 0 720 240" fill="none">
   <title>Logo von bundesbehörden-nein-as-a-Service</title>
-  <desc>Ein stilisiertes Verwaltungsgebäude mit rotem Nein-Stempel, ohne amtliches Hoheitszeichen.</desc>
-  <rect x="2" y="2" width="156" height="156" rx="28" fill="#F4F6F8" stroke="#CAD3DC" stroke-width="2"/>
-  <path d="M32 54 80 28 128 54Z" fill="#18354B"/>
-  <path d="M32 60H128M30 116H130M26 126H134" stroke="#18354B" stroke-width="8"/>
-  <path d="M45 68V108M68 68V108M92 68V108M115 68V108" stroke="#18354B" stroke-width="10"/>
-  <g transform="rotate(-12 91 103)">
-    <rect x="46" y="82" width="90" height="42" rx="5" fill="#FFF" stroke="#B42332" stroke-width="4"/>
-    <text x="91" y="111" text-anchor="middle" fill="#B42332" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="700" letter-spacing="2">NEIN</text>
+  <desc>Satirische Behörden-Wortmarke: Verwaltungsgebäude, schwarz-rot-goldene Leiste und die Aufschrift Bundesbehörden NEIN as-a-Service. Kein amtliches Hoheitszeichen.</desc>
+  <rect width="720" height="240" fill="#FFF"/>
+  <path d="M32 66 96 32 160 66Z" fill="#171717"/>
+  <path d="M35 78H157M32 166H160M26 180H166" stroke="#171717" stroke-width="8"/>
+  <path d="M48 90V153M80 90V153M112 90V153M144 90V153" stroke="#171717" stroke-width="11"/>
+  <path d="M58 103 134 147M134 103 58 147" stroke="#B42332" stroke-width="9"/>
+  <path d="M194 32H200V91H194Z" fill="#171717"/>
+  <path d="M194 91H200V150H194Z" fill="#C62828"/>
+  <path d="M194 150H200V208H194Z" fill="#E5AC19"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="228" y="66" fill="#171717" font-size="32" font-weight="700">Bundesbehörden</text>
+    <text x="224" y="147" fill="#B42332" font-size="88" font-weight="700" letter-spacing="5">NEIN</text>
+    <text x="228" y="190" fill="#171717" font-size="36">as-a-Service</text>
+    <text x="32" y="222" fill="#595959" font-size="12" letter-spacing="2">SATIRE · KEINE AMTLICHE STELLE</text>
   </g>
 </svg>

@@ -4,11 +4,12 @@
 
 Statische Version des Nein-Generators. Läuft komplett im Browser, ganz ohne Server.
 
-- **Bundesbehördendeutsch**: satirische Absagen auf Bundesverwaltungsebene, mit Ressortabstimmung, Haushaltsvorbehalt, Bund-Länder-Zuständigkeit und ministerieller Mitzeichnung. Aus den Textbausteinen entstehen mehrere tausend Varianten.
+- **Bundesbehördendeutsch**: satirische Absagen auf Bundesverwaltungsebene, mit Ressortabstimmung, Haushaltsvorbehalt, Bund-Länder-Zuständigkeit und ministerieller Mitzeichnung. Dazu kommen Fördermittel, Vergabe, Digitalisierung, der Besprechungsfreitag und die Fensterreinigung am Dienststandort. 70 feste Absagen und über 11 Millionen kombinierbare Varianten.
 - **English**: zufällige Absagen aus `public/reasons-en.json`.
 - **Nein kopieren**: kopiert die angezeigte Absage in die Zwischenablage (HTTPS oder localhost erforderlich).
 
-Eigenes SVG-Logo mit Verwaltungsgebäude und Nein-Stempel, auch als Favicon.
+Eigene SVG-Wortmarke mit Verwaltungsgebäude, schwarz-rot-goldener Leiste und
+„Bundesbehörden NEIN as-a-Service“, im Frontend und als Favicon eingebunden.
 Das Projekt ist Satire: keine Bundesbehörde, keine amtlichen Bescheide und keine Rechtsauskunft.
 
 ## JSON-Abfrage
