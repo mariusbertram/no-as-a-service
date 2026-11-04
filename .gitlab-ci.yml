@@ -1,6 +1,6 @@
 pages:
   stage: deploy
-  image: registry.access.redhat.com/ubi9/ubi:latest
+  image: base-registry-01.prod.caas.itz.itzbund.net/caas-pipeline-components/hadolint:latest
   script:
     - echo "Statische Seite aus public/"
   pages: true
