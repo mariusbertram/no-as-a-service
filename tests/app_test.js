@@ -5,7 +5,10 @@ function assert(condition, message) {
   if (!condition) throw new Error(message);
 }
 
-function setup(fetch = async () => ({ ok: true, json: async () => ["English rejection"] })) {
+function setup(
+  fetch = async () => ({ ok: true, json: async () => ["English rejection"] }),
+  random = Math.random,
+) {
   const elements = Object.fromEntries(
     ["reason", "lang", "dialect", "copy", "status", "again"].map((id) => [id, {
       value: id === "dialect" ? "standard" : "de",
@@ -19,22 +22,24 @@ function setup(fetch = async () => ({ ok: true, json: async () => ["English reje
   );
   const copied = [];
   const errors = [];
-  const variants = new Function("document", "navigator", "fetch", "console",
+  const variants = new Function("document", "navigator", "fetch", "console", "Math",
     source + "\nreturn dialects;")(
     { getElementById: (id) => elements[id], createElement: () => ({}) },
     { clipboard: { writeText: async (text) => { copied.push(text); } } },
     fetch,
     { error: (...args) => errors.push(args) },
+    Object.assign(Object.create(Math), { random }),
   );
   return { elements, variants, copied, errors };
 }
 
-Deno.test("all regional options have eight distinct, reachable reasons", async () => {
+Deno.test("all regional options have at least 100 distinct, reachable reasons", async () => {
   const { elements, variants, copied } = setup();
   assert(elements.reason.textContent && !elements.copy.disabled, "Default reason missing");
   assert(elements.dialect.children.length === 10, "Missing dialect options");
   for (const [key, variant] of Object.entries(variants)) {
-    assert(variant.reasons.length === 8 && new Set(variant.reasons).size === 8, key);
+    assert(variant.reasons.length >= 100, `${key}: too few reasons`);
+    assert(new Set(variant.reasons).size === variant.reasons.length, `${key}: duplicates`);
     assert(variant.reasons.every((text) => text.trim() === text && text.length > 0), key);
     assert(variant.reasons.some((text) => /Freid|Freit|Fried/.test(text)), `${key}: Friday`);
     assert(variant.reasons.some((text) => /Fenster|Fensder|Fenschter|Finster/.test(text)), `${key}: windows`);
@@ -50,6 +55,25 @@ Deno.test("all regional options have eight distinct, reachable reasons", async (
     assert(variant.reasons.includes(elements.reason.textContent), `${key}: regenerate`);
     assert(elements.status.textContent === "", `${key}: feedback reset`);
   }
+});
+
+Deno.test("every one of the 128 dialect reasons is selectable through the UI", async () => {
+  let random = 0;
+  const { elements, variants } = setup(undefined, () => random);
+  const allReasons = [];
+  for (const [key, variant] of Object.entries(variants)) {
+    assert(variant.reasons.length === 128, `${key}: documented count mismatch`);
+    elements.dialect.value = key;
+    for (const [index, reason] of variant.reasons.entries()) {
+      random = (index + 0.5) / variant.reasons.length;
+      await elements.again.events.click();
+      assert(elements.reason.textContent === reason, `${key}: unreachable reason ${index}`);
+      assert(!elements.copy.disabled && elements.reason.lang === "de", `${key}: UI state`);
+    }
+    allReasons.push(...variant.reasons);
+  }
+  assert(allReasons.length === 1280, "Incorrect overall count");
+  assert(new Set(allReasons).size === allReasons.length, "Duplicate reasons across dialects");
 });
 
 Deno.test("English disables dialect selection and German restores the previous choice", async () => {
