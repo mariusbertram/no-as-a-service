@@ -3,26 +3,48 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>No-as-a-Service</title>
+  <meta name="description" content="bundesbehörden-nein-as-a-Service: satirische Absagen mit Ressortabstimmung, Haushaltsvorbehalt und ministeriellem Nein.">
+  <title>bundesbehörden-nein-as-a-Service</title>
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
   <style>
-    body { font-family: system-ui, sans-serif; max-width: 42rem; margin: 2rem auto; padding: 0 1rem; text-align: center; }
-    img { max-width: 100%; }
-    #reason { font-size: 1.4rem; min-height: 6rem; margin: 2rem 0; }
-    button, select { font-size: 1rem; padding: .5rem 1rem; }
+    body { font-family: system-ui, sans-serif; max-width: 48rem; margin: 2rem auto; padding: 0 1rem; text-align: center; color: #18354b; background: #f4f6f8; }
+    .logo { width: 120px; height: 120px; }
+    h1 { font-size: clamp(1.5rem, 5vw, 2.2rem); overflow-wrap: anywhere; }
+    #reason { font-size: 1.25rem; line-height: 1.7; min-height: 6rem; margin: 2rem 0; padding: 1.5rem; background: white; border: 1px solid #cad3dc; border-top: 4px solid #18354b; text-align: left; }
+    .controls { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem; }
+    button, select { font: inherit; padding: .65rem 1rem; border: 1px solid #18354b; border-radius: .25rem; background: white; color: #18354b; }
+    button { cursor: pointer; }
+    #again { background: #18354b; color: white; }
+    button:disabled { opacity: .5; cursor: default; }
+    :focus-visible { outline: 3px solid #b42332; outline-offset: 3px; }
+    a { color: #18354b; }
+    #status { min-height: 1.5rem; }
+    footer { margin-top: 2rem; font-size: .85rem; line-height: 1.6; }
   </style>
 </head>
 <body>
-  <img src="assets/banner.png" alt="No-as-a-Service">
-  <h1>❌ No-as-a-Service</h1>
+  <header>
+    <img class="logo" src="assets/logo.svg" alt="Verwaltungsgebäude mit Nein-Stempel" width="120" height="120">
+    <h1>bundesbehörden-nein-as-a-Service</h1>
+    <p>Ressortübergreifend abgestimmt. Abschließend abgelehnt.</p>
+  </header>
+  <main>
   <p id="reason" aria-live="polite"></p>
+  <div class="controls">
   <button id="again">Noch ein Nein</button>
   <button id="copy" disabled>Nein kopieren</button>
   <select id="lang" aria-label="Sprache">
-    <option value="de" selected>Behördendeutsch</option>
+    <option value="de" selected>Bundesbehördendeutsch</option>
     <option value="en">English</option>
   </select>
+  </div>
   <p id="status" role="status"></p>
+  <noscript>Bitte JavaScript aktivieren, um einen satirischen Bescheid zu erzeugen.</noscript>
+  </main>
+  <footer>
+  <p>Satireprojekt. Keine Bundesbehörde, keine amtlichen Bescheide und keine Rechtsauskunft.</p>
   <p><small>Rohdaten: <a href="reasons-en.json">reasons-en.json</a></small></p>
+  </footer>
   <script src="app.js"></script>
 </body>
 </html>

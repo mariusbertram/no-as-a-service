@@ -1,10 +1,15 @@
-# ❌ No-as-a-Service (GitLab Pages)
+# bundesbehörden-nein-as-a-Service
+
+![Projektlogo](public/assets/logo.svg)
 
 Statische Version des Nein-Generators. Läuft komplett im Browser, ganz ohne Server.
 
-- **Behördendeutsch**: Nein-Bescheide werden aus Textbausteinen kombiniert (mehrere tausend Varianten).
+- **Bundesbehördendeutsch**: satirische Absagen auf Bundesverwaltungsebene, mit Ressortabstimmung, Haushaltsvorbehalt, Bund-Länder-Zuständigkeit und ministerieller Mitzeichnung. Aus den Textbausteinen entstehen mehrere tausend Varianten.
 - **English**: zufällige Absagen aus `public/reasons-en.json`.
 - **Nein kopieren**: kopiert die angezeigte Absage in die Zwischenablage (HTTPS oder localhost erforderlich).
+
+Eigenes SVG-Logo mit Verwaltungsgebäude und Nein-Stempel, auch als Favicon.
+Das Projekt ist Satire: keine Bundesbehörde, keine amtlichen Bescheide und keine Rechtsauskunft.
 
 ## JSON-Abfrage
 
